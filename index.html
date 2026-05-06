@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wayseal — Auto-log every notary signing. Drive. Stamp. Done.</title>
+<meta name="description" content="Wayseal is the phone-first workbench for mobile notary signing agents. Auto-import SnapDocs jobs, GPS-track mileage, generate state-compliant journal entries — all without typing." />
+<meta property="og:title" content="Wayseal — Drive. Stamp. Done. We log it all." />
+<meta property="og:description" content="Auto-imports your signings, tracks mileage with GPS, drops state-compliant journal entries — all without typing. Built for mobile notary signing agents." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="stylesheet" href="/landing.css" />
+<!-- PostHog -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_QLq1IyOJF3FIKXvF462tepbZqLj4hHUl5j3OkXE1ReT',{api_host:'https://us.i.posthog.com'});
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="brand">
+    <img src="/logo.png" alt="Wayseal" class="brand-logo" onerror="this.style.display='none'" />
+    <span class="brand-name">Wayseal</span>
+  </a>
+  <nav class="site-nav">
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/tool.html" class="nav-cta">Try the free decoder →</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ========= HERO ========= -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">For Mobile Notary Signing Agents</div>
+        <h1>Drive. Stamp. <em>Done.</em><br /><span class="hero-em">We log it all.</span></h1>
+        <p class="hero-lede">Wayseal sits between your SnapDocs inbox, your GPS, and your tax preparer. It auto-imports every signing, tracks the drive, fills your state-compliant journal, and emits an IRS-bulletproof mileage report — all without typing.</p>
+
+        <form class="signup-form" id="hero-form" novalidate>
+          <input type="email" name="email" placeholder="you@notarymail.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Get early access</button>
+        </form>
+        <p class="form-status" id="hero-status"></p>
+        <p class="hero-trust">
+          <span>Built for the notary in the minivan ·</span>
+          <a href="/tool.html">Try the free paper-journal decoder →</a>
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="device-card">
+          <div class="device-stripe"></div>
+          <div class="device-body">
+            <div class="device-row device-row-head">
+              <span>Today · 4 signings</span>
+              <span class="device-mileage">62.4 mi</span>
+            </div>
+            <div class="device-trip">
+              <div class="trip-time">9:14 AM</div>
+              <div class="trip-line">
+                <div class="trip-dot trip-dot-start"></div>
+                <span class="trip-loc">Home base · Englewood</span>
+              </div>
+              <div class="trip-line">
+                <div class="trip-dot trip-dot-end"></div>
+                <span class="trip-loc">Mendoza loan closing · Aurora</span>
+              </div>
+              <div class="trip-meta">
+                <span class="chip chip-success">Journal: filled ✓</span>
+                <span class="chip chip-gold">14.2 mi · $9.79 IRS</span>
+              </div>
+            </div>
+            <div class="device-trip">
+              <div class="trip-time">11:42 AM</div>
+              <div class="trip-line">
+                <div class="trip-dot trip-dot-start"></div>
+                <span class="trip-loc">Aurora · Mendoza</span>
+              </div>
+              <div class="trip-line">
+                <div class="trip-dot trip-dot-end"></div>
+                <span class="trip-loc">Healthcare directive · Lakewood</span>
+              </div>
+              <div class="trip-meta">
+                <span class="chip chip-success">Journal: filled ✓</span>
+                <span class="chip chip-gold">21.8 mi · $15.04 IRS</span>
+              </div>
+            </div>
+            <div class="device-trip">
+              <div class="trip-time">2:08 PM</div>
+              <div class="trip-line">
+                <div class="trip-dot trip-dot-start"></div>
+                <span class="trip-loc">Lakewood</span>
+              </div>
+              <div class="trip-line">
+                <div class="trip-dot trip-dot-end"></div>
+                <span class="trip-loc">POA · Boulder courthouse</span>
+              </div>
+              <div class="trip-meta">
+                <span class="chip chip-pending">Journal: pending review</span>
+                <span class="chip chip-gold">26.4 mi · $18.21 IRS</span>
+              </div>
+            </div>
+            <div class="device-row device-row-foot">
+              <span>Day total: <strong>$43.04 deductible mileage</strong></span>
+              <span class="device-export">→ Export</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= PAIN ========= -->
+  <section class="band band-cream">
+    <div class="container">
+      <h2 class="section-title">If your day ends with a stack of paperwork, you're not alone.</h2>
+      <div class="pain-grid">
+        <blockquote class="pain-quote">
+          <p>"I'm three weeks behind on my journal entries and panicking. What if I'm audited?"</p>
+          <cite>— r/Notary, March 2026</cite>
+        </blockquote>
+        <blockquote class="pain-quote">
+          <p>"My mileage spreadsheet has 8 tabs and I lost the formula in the new tab."</p>
+          <cite>— LSS Facebook group</cite>
+        </blockquote>
+        <blockquote class="pain-quote">
+          <p>"Spilled coffee on my paper journal. There went 4 months of records."</p>
+          <cite>— r/NotaryPublic</cite>
+        </blockquote>
+      </div>
+      <p class="band-footnote">There are <strong>200,000 mobile notary signing agents</strong> in the US. Most of them run their entire business on a paper journal, an Excel mileage log, and the SnapDocs notification badge.</p>
+    </div>
+  </section>
+
+  <!-- ========= HOW IT WORKS ========= -->
+  <section id="how" class="band band-paper">
+    <div class="container">
+      <div class="eyebrow eyebrow-center">How Wayseal works</div>
+      <h2 class="section-title section-title-center">Three integrations that make four tools redundant.</h2>
+
+      <div class="step-grid">
+        <article class="step">
+          <div class="step-num">01</div>
+          <h3>Auto-import every signing</h3>
+          <p>Forward your SnapDocs / NotaryDash / direct-title-company emails to your Wayseal address. We parse out the package, signer, fee, and address — all before you've put on your shoes.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">02</div>
+          <h3>Tap "Start signing" — we drive with you</h3>
+          <p>One tap when you leave home. GPS logs the trip. We calculate IRS-spec mileage to the exact mile. You get a notification when the trip closes; the journal entry is pre-filled before you walk back to the car.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">03</div>
+          <h3>End of year? One click.</h3>
+          <p>1099 / Schedule C export. State-compliant journal PDF for your records. A "Wrapped"-style annual review you'll actually want to share. No bookkeeper required.</p>
+        </article>
+      </div>
+
+      <div class="how-cta-row">
+        <a href="/tool.html" class="btn btn-secondary btn-lg">Try the free paper-journal decoder →</a>
+        <p class="micro">Snap a photo of any old journal page. We'll digitize every row in 10 seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FEATURES ========= -->
+  <section class="band band-cream">
+    <div class="container">
+      <div class="eyebrow eyebrow-center">What's in the box</div>
+      <h2 class="section-title section-title-center">Everything paper journals + 4 spreadsheets do — plus the parts that actually matter.</h2>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">📥</div>
+          <h3>Email-to-Job</h3>
+          <p>SnapDocs, NotaryDash, direct titles, raw text — forward and forget. We extract package, fee, address, and signer in seconds.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📍</div>
+          <h3>GPS Auto-Mileage</h3>
+          <p>One-tap "Start signing." Trip closes when you arrive home. IRS-spec rate, audit-ready PDF, no manual entry.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📓</div>
+          <h3>50-State Journal</h3>
+          <p>Every state's journal field requirements, baked in. CA needs thumbprint? FL wants document type code? We prompt for exactly what your state requires.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📷</div>
+          <h3>Paper-Journal Import</h3>
+          <p>Have 4 months of paper backlog? Snap a photo. Our AI reads every row and turns it into clean digital entries — verifiable, exportable, audit-ready.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💰</div>
+          <h3>1099 / Schedule C</h3>
+          <p>End-of-year export that drops straight into TurboTax or your CPA's intake. Mileage, gross income, expenses — all categorized.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎁</div>
+          <h3>Year in Review</h3>
+          <p>Total miles. Total signings. Top counties. Fastest day. The "Wrapped" notaries actually want to post about — and a slow growth loop for us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= PRICING ========= -->
+  <section id="pricing" class="band band-paper">
+    <div class="container">
+      <div class="eyebrow eyebrow-center">Pricing</div>
+      <h2 class="section-title section-title-center">Pay less than your monthly drive-thru coffee budget.</h2>
+
+      <div class="pricing-grid">
+        <article class="tier">
+          <h3>Solo</h3>
+          <p class="tier-price"><span class="tier-amount">$19</span><span class="tier-period">/month</span></p>
+          <p class="tier-desc">For NSAs doing 5–25 signings/month.</p>
+          <ul class="tier-features">
+            <li>Auto-import 25 signings/mo</li>
+            <li>GPS mileage tracking</li>
+            <li>Digital state-compliant journal</li>
+            <li>PDF export for records</li>
+          </ul>
+          <a href="#hero-form" class="btn btn-ghost btn-block">Start with Solo</a>
+        </article>
+
+        <article class="tier tier-featured">
+          <div class="tier-flag">Most popular</div>
+          <h3>Pro</h3>
+          <p class="tier-price"><span class="tier-amount">$39</span><span class="tier-period">/month</span></p>
+          <p class="tier-desc">For full-time NSAs doing 25–80/mo.</p>
+          <ul class="tier-features">
+            <li>Everything in Solo</li>
+            <li><strong>Unlimited</strong> signings</li>
+            <li>1099 / Schedule C export</li>
+            <li>Monthly P&L statement</li>
+            <li>Year-end Wrapped review</li>
+            <li>AI paper-journal import</li>
+          </ul>
+          <a href="#hero-form" class="btn btn-primary btn-block">Start with Pro</a>
+        </article>
+
+        <article class="tier">
+          <h3>Office</h3>
+          <p class="tier-price"><span class="tier-amount">$79</span><span class="tier-period">/month</span></p>
+          <p class="tier-desc">For 3–5 notary teams running shared dispatch.</p>
+          <ul class="tier-features">
+            <li>Everything in Pro</li>
+            <li>Up to 5 notaries</li>
+            <li>Team dashboard</li>
+            <li>Route optimization</li>
+            <li>Payment reconciliation</li>
+          </ul>
+          <a href="#hero-form" class="btn btn-ghost btn-block">Talk to us</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FAQ ========= -->
+  <section class="band band-cream">
+    <div class="container container-narrow">
+      <div class="eyebrow eyebrow-center">FAQ</div>
+      <h2 class="section-title section-title-center">Quick answers.</h2>
+
+      <details class="faq">
+        <summary>Is my journal data state-compliant if it lives in your app?</summary>
+        <p>Most states accept electronic journals as long as the entries contain the required fields and are tamper-evident. We follow the strictest state's requirements (California) by default and provide audit-ready PDF exports any time you need them. We're not lawyers — always verify with your state's notary commission, but we've designed Wayseal to satisfy all 50 states' digital journal rules.</p>
+      </details>
+      <details class="faq">
+        <summary>What if SnapDocs blocks email forwarding?</summary>
+        <p>Wayseal ingests from any source — SnapDocs notifications, NotaryDash, direct emails from title companies, even raw text you paste in. We're not relying on any one platform.</p>
+      </details>
+      <details class="faq">
+        <summary>I have years of paper journals. Can you really digitize them?</summary>
+        <p>Yes — try the <a href="/tool.html">free paper-journal decoder</a> right now. Snap a photo of any page; we extract every row in 10 seconds. Pro plan includes unlimited photo imports.</p>
+      </details>
+      <details class="faq">
+        <summary>How accurate is the AI on handwritten entries?</summary>
+        <p>We use Gemini 2.0 multimodal vision. Typed entries are ~98% accurate; handwritten entries are 80–92% depending on legibility. Every parsed entry is reviewable and editable before it commits to your journal — we never auto-save anything you can't verify.</p>
+      </details>
+      <details class="faq">
+        <summary>Is Wayseal live yet?</summary>
+        <p>The free paper-journal decoder is live today. The full app (auto-import, GPS, journal, exports) is shipping in waves through 2026. Drop your email above to lock in early-access pricing.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ========= CTA ========= -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ship one less spreadsheet. Get back one Sunday.</h2>
+      <p>Get early access pricing + the free 50-state notary journal template.</p>
+      <form class="signup-form signup-form-large" id="cta-form" novalidate>
+        <input type="email" name="email" placeholder="you@notarymail.com" required aria-label="Email address" />
+        <button type="submit" class="btn btn-secondary">Get early access</button>
+      </form>
+      <p class="form-status" id="cta-status"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>
+      <strong>Wayseal</strong> · Drive. Stamp. Done.
+      <p class="micro">Built by <a href="https://majorsolutions.studio">Major Solutions Studio</a> · An AI-powered micro-incubator.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/tool.html">Free decoder</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "memorability": 8,
+    "scalability": 5,
+    "on_brand": 9,
+    "timelessness": 7,
+    "simplicity": 7,
+    "overall": 7,
+    "notes": "The logo effectively conveys trust and professionalism, but the intricate details might get lost at smaller sizes.",
+    "name": "monogram"
+  },
+  {
+    "memorability": 7,
+    "scalability": 4,
+    "on_brand": 8,
+    "timelessness": 7,
+    "simplicity": 6,
+    "overall": 7,
+    "notes": "The logo is memorable and on-brand, but the details might get lost at smaller sizes.",
+    "name": "seal"
+  },
+  {
+    "memorability": 7,
+    "scalability": 5,
+    "on_brand": 7,
+    "timelessness": 6,
+    "simplicity": 6,
+    "overall": 6,
+    "notes": "The compass rose is a strong symbol, but the details might get lost at smaller sizes.",
+    "name": "compass-stamp"
+  }
+]

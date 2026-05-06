@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wayseal — Paper Journal Decoder</title>
+<meta name="description" content="Upload a photo of your paper notary journal page. AI parses every row into clean digital entries you can paste into your records." />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="stylesheet" href="/styles.css" />
+<!-- PostHog -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_QLq1IyOJF3FIKXvF462tepbZqLj4hHUl5j3OkXE1ReT',{api_host:'https://us.i.posthog.com'});
+</script>
+</head>
+<body class="tool-body">
+
+<header class="tool-header">
+  <a href="/" class="brand">
+    <img src="/logo.png" alt="Wayseal" class="brand-logo" onerror="this.style.display='none'" />
+    <span class="brand-name">Wayseal</span>
+  </a>
+  <nav class="tool-nav">
+    <a href="/">About</a>
+    <a href="#how">How it works</a>
+    <a href="/#pricing">Pricing</a>
+  </nav>
+</header>
+
+<main class="tool-main">
+  <section class="tool-hero">
+    <div class="eyebrow">Free tool · No signup required</div>
+    <h1>Turn your paper journal into a clean digital record.</h1>
+    <p class="lede">Upload a photo of any notary journal page — AI extracts every row into structured entries (date, signer, document type, fee) you can copy, download as CSV, or paste straight into your bookkeeping.</p>
+  </section>
+
+  <section class="card upload-card" id="uploader">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="upload-zone" id="dropzone">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <div class="upload-stack">
+          <div class="upload-icon" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+          </div>
+          <div class="upload-cta">
+            <button type="button" class="btn btn-primary" id="choose-btn">Choose a photo</button>
+            <p class="upload-hint">or drag a JPG / PNG of your journal page here</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="upload-preview" id="preview" hidden>
+        <img id="preview-img" alt="Journal page preview" />
+        <button type="button" class="btn btn-ghost" id="reset-btn">Use a different photo</button>
+      </div>
+
+      <div class="upload-actions">
+        <button type="button" class="btn btn-primary btn-lg" id="parse-btn" disabled>Parse this page</button>
+        <span class="micro" id="status-text"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card results-card" id="results" hidden>
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="results-header">
+        <h2>Extracted entries</h2>
+        <div class="results-meta">
+          <span class="badge badge-success" id="count-badge">0 entries</span>
+          <button type="button" class="btn btn-ghost btn-sm" id="copy-btn">Copy table</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="csv-btn">Download CSV</button>
+        </div>
+      </div>
+      <div class="results-table-wrap">
+        <table class="results-table" id="results-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Signer Name</th>
+              <th>Document Type</th>
+              <th>ID Type</th>
+              <th>Fee</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody"></tbody>
+        </table>
+      </div>
+      <div class="results-footnote">
+        Entries are extracted with AI. Always verify against your physical journal before relying on these for IRS or state compliance.
+      </div>
+    </div>
+  </section>
+
+  <section class="card capture-card" id="capture-card" hidden>
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <h3>Save this for next time</h3>
+      <p>Drop your email and we'll save this parse to your account — and email you a free 50-state notary journal template (PDF + Google Sheets).</p>
+      <form id="capture-form" class="capture-form" novalidate>
+        <input type="email" name="email" id="email-input" placeholder="you@notarymail.com" required />
+        <button type="submit" class="btn btn-primary">Send me the template</button>
+      </form>
+      <p class="micro" id="capture-status"></p>
+    </div>
+  </section>
+
+  <section class="card how-card" id="how">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <h2>How it works</h2>
+      <ol class="how-list">
+        <li><strong>You photograph</strong> any page of your paper journal. Phone snap is fine; a flat angle helps.</li>
+        <li><strong>We parse with AI</strong> — Gemini 2.0 reads every row and pulls out date, signer, document type, ID, and fee.</li>
+        <li><strong>You review and export</strong> — copy the table to your sheet, download CSV, or upgrade to keep a running digital journal that's always state-compliant.</li>
+      </ol>
+      <div class="how-cta">
+        <a href="/" class="btn btn-secondary">See the full Wayseal tour →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="tool-footer">
+  <div class="footer-row">
+    <span>© 2026 Wayseal · Built by <a href="https://majorsolutions.studio">Major Solutions Studio</a></span>
+    <span><a href="/">Home</a> · <a href="/#pricing">Pricing</a></span>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
