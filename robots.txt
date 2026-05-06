@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wayseal.majorsolutions.studio/sitemap.xml
